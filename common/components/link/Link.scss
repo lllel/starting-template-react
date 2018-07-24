@@ -1,0 +1,16 @@
+.component-link-default {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  color: #09f;
+  text-decoration: underline;
+
+  &:hover {
+    color: #0877C2;
+  }
+
+  &:focus {
+    color: #0877C2;
+  }
+}

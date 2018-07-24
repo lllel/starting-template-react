@@ -1,0 +1,17 @@
+.component-input-radio-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.component-input-radio-container input {
+  display: block;
+  margin-top: 0 !important;
+}
+
+.component-input-radio-label {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13px;
+  padding-left: 8px;
+  margin-bottom: 0 !important;
+}
