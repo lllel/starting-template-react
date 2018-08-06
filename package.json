@@ -2,10 +2,6 @@
   "name": "app",
   "version": "2.1.0",
   "description": "",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
   "scripts": {
     "start": "webpack-dev-server --config internals/webpack/webpack.dev.config.js --progress --profile --colors",
     "build": "webpack --config internals/webpack/webpack.dev.config.js --progress --profile --colors",
@@ -20,8 +16,7 @@
     "jquery-ui": "^1.12.1",
     "lodash": "^4.17.10",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1"
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "@types/node": "^10.5.2",

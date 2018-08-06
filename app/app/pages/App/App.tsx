@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./App.scss";
-import NamePage from "../../../name/pages/name-page/NamePage";
+import TestPage from "../../../test/pages/test-page/TestPage";
 
 interface IProps {
 }
@@ -16,7 +16,7 @@ export default class App extends React.Component<IProps, IState> {
     render() {
         return (
             <>
-                <NamePage/>
+                <TestPage/>
             </>
         );
     }

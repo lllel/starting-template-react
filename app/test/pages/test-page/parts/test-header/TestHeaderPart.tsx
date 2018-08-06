@@ -1,4 +1,5 @@
 import * as React from "react";
+import './TestHeaderPart.scss';
 
 interface IProps {
 }
@@ -6,21 +7,14 @@ interface IProps {
 interface IState {
 }
 
-export default class NamePage extends React.Component<IProps, IState> {
-    namePage: any;
-
+export default class TestHeaderPart extends React.Component<IProps, IState> {
     constructor(props) {
         super(props);
-
-        //#region namePage
-        this.namePage = null;
-        //#endregion
     }
 
     render() {
         return (
             <>
-                <p>Hello, world!!!</p>
             </>
         );
     }

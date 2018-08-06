@@ -16,7 +16,7 @@ module.exports = {
     devtool: 'source-map',
     devServer: {
         stats: 'errors-only',
-        port: 9000,
+        port: 9002,
         publicPath: "/",
         historyApiFallback: true,
         disableHostCheck: true
@@ -99,8 +99,8 @@ module.exports = {
           },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                loader: 'file-loader',
-                // loader: 'url-loader?limit=1000&name=images/[hash].[ext]',
+                // loader: 'file-loader',
+                loader: 'url-loader?limit=1000&name=images/[hash].[ext]',
                 options: {
                     name: 'img/[name]-[hash:4].[ext]'
                 }
