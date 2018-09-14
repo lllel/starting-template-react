@@ -47,12 +47,16 @@ class Core {
                 }
             }
         };
+
         if (settings.isFile)
             settings.xhr = function () {// Seems like the only way to get access to the xhr object
                 let xhr = new XMLHttpRequest();
+
                 xhr.responseType = 'blob';
+
                 return xhr;
             };
+
         $.ajax(settings)
             .always(() => {
                 if (params.onAlways) {
