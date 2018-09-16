@@ -1,4 +1,5 @@
 import constantsTypes from '../constants-types/constants-type';
+import history from '../history/history';
 
 export function mapOrderPricePlus(id) {
     return {
@@ -23,5 +24,7 @@ export function loadShoppingBagItems() {
                 shoppingBagData: []
             });
         }, 2000);
+
+        // history.push('/test-page');
     }
 }

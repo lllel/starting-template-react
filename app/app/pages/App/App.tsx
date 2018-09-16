@@ -1,7 +1,9 @@
 import * as React from "react";
 import "./App.scss";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+// import {ConnectedRouter} from 'react-router-redux';
+import {Router, Route, Switch} from 'react-router-dom';
 import {connect} from "react-redux";
+import history from '../../../../common/redux/history/history';
 import {mapToArr} from "../../../../common/helpers/helpers";
 import {loadShoppingBagItems, mapOrderPricePlus} from "../../../../common/redux/action-create/actionCreate";
 import TestPage from "../../../test/pages/test-page/TestPage";
@@ -43,7 +45,7 @@ class App extends React.Component<IProps, IState> {
             )}
 
         return (
-            <Router>
+            <Router history={history}>
                 {/*<TestPage/>*/}
 
                 {/*{this.state.currentPage === 'clothesAndAccessories' ? <TestPage onEvent={this.onEvent.bind(this)}/> : null}*/}
