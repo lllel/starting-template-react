@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as _ from 'lodash';
-
 //import 'react-tabs/style/react-tabs.scss';
 import './styles_external/TabsItemsExternal.scss';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';

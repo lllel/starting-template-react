@@ -1,11 +1,9 @@
 import * as React from "react";
 import "./App.scss";
 // import {ConnectedRouter} from 'react-router-redux';
-import {Router, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {connect} from "react-redux";
-import history from '../../../../common/redux/history/history';
-import {mapToArr} from "../../../../common/helpers/helpers";
-import {loadShoppingBagItems, mapOrderPricePlus} from "../../../../common/redux/action-create/actionCreate";
+import {testAC, loadDataAC} from "../../../../common/redux/action/action";
 import TestPage from "../../../test/pages/test-page/TestPage";
 
 interface IProps {
@@ -14,7 +12,6 @@ interface IProps {
 }
 
 interface IState {
-    // currentPage: string
 }
 
 class App extends React.Component<IProps, IState> {
@@ -37,39 +34,26 @@ class App extends React.Component<IProps, IState> {
     }
 
     render() {
-        console.log(this.props.shoppingBagItems);
-
         if (this.props.loading) {
             return (
                 <p>Loading...</p>
             )}
 
         return (
-            <Router history={history}>
-                {/*<TestPage/>*/}
-
+            <>
                 {/*{this.state.currentPage === 'clothesAndAccessories' ? <TestPage onEvent={this.onEvent.bind(this)}/> : null}*/}
 
                 <Switch>
                     <Route path={'/test-page'} component={TestPage} exact={true}/>
                     <Route path={'*'} render={this.showNotFound.bind(this)}/>
                 </Switch>
-            </Router>
+            </>
         );
     }
 }
 
-// function mapOrderPriceFromStore(store) {
-//     return {
-//       price: store.orderPrice,
-//       t: 'aaaaaaaaaaaa'
-//     };
-// }
-
 export default connect((store: any) => {
     return {
-        shoppingBagItems: mapToArr(store.shoppingBagItems.entities),
-        loading: store.shoppingBagItems.loading,
-        loaded: store.shoppingBagItems.loaded
+        loading: store.test.loading,
     };
-}, {mapOrderPricePlus, loadShoppingBagItems})(App);
+}, {testAC, loadDataAC})(App);

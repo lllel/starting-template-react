@@ -3,7 +3,6 @@ import {NavLink, Route} from 'react-router-dom';
 import Link from "../../../../common/components/link/Link";
 
 interface IProps {
-    // onEvent: (name) => void;
 }
 
 interface IState {

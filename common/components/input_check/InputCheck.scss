@@ -1,16 +1,18 @@
 .component-check-container input {
   vertical-align: middle;
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
+
 .component-check-container label {
-  font-weight: normal!important;
+  font-weight: normal !important;
   margin-left: 5px;
 }
+
 .component-check-container input:disabled {
 
   cursor: not-allowed;
 }
+
 .component-check-label {
   font-size: 13px;
 }
-

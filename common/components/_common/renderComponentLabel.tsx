@@ -8,6 +8,7 @@ function renderComponentLabel(comp, params?: ILabelParams) {
 
     const componentLabel = <div className={params.params.classL} style={{textAlign: (params.params.align as TextAlignProperty)}}>{params.text}</div>;
     const component = <div className={params.params.classC}>{comp}</div>;
+
     return (
         <>
             {params.params.orient === 'left' ?

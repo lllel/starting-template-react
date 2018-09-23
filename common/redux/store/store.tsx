@@ -5,9 +5,7 @@ import thunk from 'redux-thunk';
 import combineReducer from '../reducers/_index';
 import randomId from '../middlewares/randomId';
 
-// const middlewares = applyMiddleware(thunk, randomId);
-
-// const middlewares = applyMiddleware(thunk, routerMiddleware(history), randomId);
+// const middlewares = applyMiddleware(routerMiddleware(history), thunk, randomId);
 const middlewares = applyMiddleware(thunk, randomId);
 const store = createStore(combineReducer, {}, middlewares);
 

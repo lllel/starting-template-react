@@ -1,13 +1,11 @@
 import * as React from 'react';
 
-import "./Button.scss"
-
 interface IProps {
-    title?:string;
-    disabled?:boolean;
-    visible?:boolean;
-    onClick?:() => void;
-    className?:string;
+    title?: string;
+    disabled?: boolean;
+    visible?: boolean;
+    onClick?: () => void;
+    className?: string;
 }
 
 interface IState {
@@ -15,22 +13,18 @@ interface IState {
 }
 
 export default class Button extends React.Component<IProps, IState> {
-
     constructor(props) {
         super(props);
-
     }
 
     render() {
         return (
             <button
-                className={`component-button
-                    ${(this.props.visible === false)? "component-button-hidden": ''}
-                    ${(this.props.className)? this.props.className : ''}`}
-                disabled={this.props.disabled}
+                className={this.props.className || ''}
+                disabled={this.props.disabled || false}
                 onClick={this.props.onClick? this.props.onClick : null}>
 
-                {this.props.children? this.props.children : this.props.title}
+                {this.props.children ? this.props.children : this.props.title}
 
                 </button>
         )

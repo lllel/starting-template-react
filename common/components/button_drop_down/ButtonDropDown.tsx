@@ -22,27 +22,32 @@ interface IState {
 
 export default class ButtonDropDown extends React.Component<IProps, IState> {
     buttonDropdownRef: any;
+
     constructor(props) {
         super(props);
     }
+
     openDropdown() {
-        if($(this.buttonDropdownRef).hasClass("open")){
+        if ($(this.buttonDropdownRef).hasClass("open")) {
             $(this.buttonDropdownRef).removeClass("open")
+
         } else {
             $(this.buttonDropdownRef).addClass("open")
         }
     }
+
     onClick(name, callback) {
         callback(name);
     }
+
     render() {
         return (
             <div className={`btn-group component-button-dropdown
-                        ${(this.props.className)? this.props.className : ''}`}
+                        ${(this.props.className) ? this.props.className : ''}`}
                  ref={(r) => this.buttonDropdownRef = r}>
                 <button type="button"
                         className={`btn btn-default dropdown-toggle
-                        ${(this.props.visible === false)? "component-button-dropdown-hidden": ''}`}
+                        ${(this.props.visible === false) ? "component-button-dropdown-hidden" : ''}`}
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -63,20 +68,24 @@ export default class ButtonDropDown extends React.Component<IProps, IState> {
         if (!_.isArray(children)) {
             children = [children];
         }
-        var a =  _.map(children, (item, index) => {
-            if(item.type.name === "ButtonDrop"){
+
+        let a = _.map(children, (item, index) => {
+            if (item.type.name === "ButtonDrop") {
                 return <li key={index}>
-                        <a href={item.props.url}
-                           target={item.props.target}
-                           className={`component-button-dropdown-item
-                           ${(item.props.disabled === true)? "component-button-dropdown-item-hidden": ''}`}
-                           onClick={item.props.onClick? ()=>{this.onClick(item.props.name, item.props.onClick)} : null}>{item.props.title}</a>
-                    </li>
+                    <a href={item.props.url}
+                       target={item.props.target}
+                       className={`component-button-dropdown-item
+                           ${(item.props.disabled === true) ? "component-button-dropdown-item-hidden" : ''}`}
+                       onClick={item.props.onClick ? () => {
+                           this.onClick(item.props.name, item.props.onClick)
+                       } : null}>{item.props.title}</a>
+                </li>
             }
 
-            if(item.type.name === "ButtonDelimiter")
-                return <li key={index} role="separator" className="divider"></li>
+            if (item.type.name === "ButtonDelimiter")
+                return <li key={index} role="separator" className="divider"/>
         });
+
         return a;
     }
 }
@@ -104,5 +113,4 @@ interface IStateButtonDelimiter {
 }
 
 export class ButtonDelimiter extends React.Component<IPropsButtonDelimiter, IStateButtonDelimiter> {
-
 }

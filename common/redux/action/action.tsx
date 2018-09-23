@@ -1,9 +1,8 @@
 import constantsTypes from '../constants-types/constants-type';
-import history from '../history/history';
 
-export function mapOrderPricePlus(id) {
+export function testAC(id) {
     return {
-        type: constantsTypes.shoppingBagPlus,
+        type: constantsTypes.TEST,
         payload: {
             id: id
         },
@@ -11,16 +10,16 @@ export function mapOrderPricePlus(id) {
     };
 }
 
-export function loadShoppingBagItems() {
+export function loadDataAC() {
     return (dispatch) => {
         dispatch({
-            type: constantsTypes.loadShoppingBagItems + constantsTypes.start,
+            type: constantsTypes.TEST + constantsTypes.START,
             shoppingBagData: true
         });
 
         setTimeout(() => {
             return dispatch({
-                type: constantsTypes.loadShoppingBagItems + constantsTypes.success,
+                type: constantsTypes.TEST + constantsTypes.SUCCESS,
                 shoppingBagData: []
             });
         }, 2000);

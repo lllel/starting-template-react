@@ -2,6 +2,7 @@
   display: flex;
   height: 100%;
 }
+
 .component-dialog-overlay {
   position: fixed;
   top: 0;
@@ -11,6 +12,7 @@
   background: #000000;
   opacity: .5;
 }
+
 .component-dialog-container {
   display: flex;
   flex-direction: column;
@@ -19,22 +21,25 @@
   opacity: 1;
   z-index: 100;
 }
+
 .component-dialog-header-container button,
 .component-dialog-header-container button:hover,
-.component-dialog-header-container button:active{
+.component-dialog-header-container button:active {
   background: none;
   border: none;
 }
 
 .component-dialog:focus,
 .component-dialog:visited,
-.component-dialog:active{
+.component-dialog:active {
   text-decoration: none;
 }
+
 .component-dialog-buttons-container {
   text-align: right;
   position: relative;
 }
+
 .component-dialog-header-container {
   align-self: flex-start;
   display: flex;
@@ -43,25 +48,29 @@
   width: 100%;
   background: #F4F2F3;
   border: 1px solid #e9e8e6;
-  font: normal normal 20px Arial,sans-serif;
+  font: normal normal 20px Arial, sans-serif;
   padding: 7px 17px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
 }
+
 .component-dialog-header-container > img {
   width: 32px;
   height: 32px;
 }
+
 .component-dialog-header {
   margin: 9px 0;
 }
+
 .component-dialog-content {
   background: #ffffff;
   padding: 19px 26px;
   overflow-y: auto;
   height: 85%;
 }
+
 .component-dialog-footer-container {
   min-height: 55px;
   width: 100%;
@@ -71,19 +80,23 @@
   padding: 13px 26px;
   box-sizing: border-box;
 }
+
 .component-dialog-footer-container button {
   margin-left: 10px;
   padding: 5px 24px;
   font-size: 14px;
 
 }
+
 .component-dialog-buttons-container button {
   border-radius: 0;
   background: linear-gradient(0deg, rgb(214, 214, 214) 6%, rgb(237, 237, 237) 70%);
 }
+
 .component-dialog-buttons-container button:hover {
   background: linear-gradient(to top, #eeeeee 5%, #e6e4e1 95%);
 }
+
 .component-dialog-buttons-container button:active {
   background: #e6e4e1;
 }

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 interface IProps {
     className?: string;
-    colmd?: number;
+    colMd?: number;
 }
 
 interface IState {
@@ -15,7 +15,7 @@ export default class Row extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <div className={`row ${this.props.className?this.props.className:""}`}>
+            <div className={`row ${this.props.className ? this.props.className : ""}`}>
                 {this.props.children}
             </div>
         );

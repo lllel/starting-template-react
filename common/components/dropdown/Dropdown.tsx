@@ -5,14 +5,13 @@ import {IComponentForm} from "../../interfaces/components/IComponentForm";
 import {IComponentProps} from "../../interfaces/components/IComponentProps";
 import {EventTypes} from "../../interfaces/enums/EventTypes";
 import {CheckStates} from "../../interfaces/enums/CheckStates";
-
 import './Dropdown.scss';
 import renderComponentLabel, {ILabelParams} from "../_common/renderComponentLabel";
 
 interface IProps extends IComponentProps {
     list?: IListDropdown[];
     firstIsEmpty?: boolean;
-    label?:ILabelParams;
+    label?: ILabelParams;
 }
 
 interface IListDropdown {
@@ -49,11 +48,13 @@ export class Dropdown extends React.Component<IProps, IState> implements ICompon
     }
 
     getLabel() {
-        var label = '';
+        let label = '';
+
         _.forEach(this.children, (item, index) => {
             if (this.state.value == item.value)
                 label = item.label;
-        })
+        });
+
         return label;
     }
 
@@ -64,19 +65,22 @@ export class Dropdown extends React.Component<IProps, IState> implements ICompon
     }
 
     checkState(states: CheckStates[]) {
-        var res = true;
+        let res = true;
+
         _.forEach(states, state => {
             if (state == CheckStates.CheckRequired) {
-
                 res = res && (!this.props.required || (this.getValue() !== ''));
             }
         });
+
         if (res) {
             if ($(this.dropdownRef).hasClass("component-dropdown-error"))
-                $(this.dropdownRef).removeClass("component-dropdown-error")
+                $(this.dropdownRef).removeClass("component-dropdown-error");
+
         } else {
-            $(this.dropdownRef).addClass("component-dropdown-error")
+            $(this.dropdownRef).addClass("component-dropdown-error");
         }
+
         return res;
     }
 
@@ -84,8 +88,9 @@ export class Dropdown extends React.Component<IProps, IState> implements ICompon
         this.setState({
             value: evt.target.value,
         });
+
         if (this.props.event)
-            this.props.event(this.props.name, EventTypes.OnChange, evt.target.value)
+            this.props.event(this.props.name, EventTypes.OnChange, evt.target.value);
     }
 
     render() {
@@ -115,10 +120,13 @@ export class Dropdown extends React.Component<IProps, IState> implements ICompon
         if (!_.isArray(children)) {
             children = [children];
         }
-        var list = [];
+
+        let list = [];
+
         list = _.map(children, (item, index) => {
             return {label: item.props.children, value: item.props.value};
         });
+
         return list;
     }
 }
